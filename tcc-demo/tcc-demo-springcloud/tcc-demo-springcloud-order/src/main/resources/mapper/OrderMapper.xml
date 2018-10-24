@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tcc.demo.springcloud.order.domain.mapper.OrderMapper">
+  <resultMap id="BaseResultMap" type="com.tcc.demo.springcloud.order.domain.entity.Order">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="number" jdbcType="VARCHAR" property="number" />
+    <result column="status" jdbcType="TINYINT" property="status" />
+    <result column="product_id" jdbcType="VARCHAR" property="productId" />
+    <result column="total_amount" jdbcType="INTEGER" property="totalAmount" />
+    <result column="count" jdbcType="BIGINT" property="count" />
+    <result column="user_id" jdbcType="VARCHAR" property="userId" />
+  </resultMap>
+</mapper>

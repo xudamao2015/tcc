@@ -1,0 +1,44 @@
+server:
+  port: 8884
+  servlet:
+    context-path: /
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/tcc_order?useUnicode=true&characterEncoding=utf8&useSSL=false
+    username: root
+    password: root
+  application:
+    name: order-service
+mybatis:
+  type-aliases-package: com.tcc.demo.springcloud.order.domain.entity
+  mapper-locations: classpath:mapper/*.xml
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+    prefer-ip-address: true
+tcc:
+  serializer: com.tcc.core.serializer.KryoSerializer
+  recoverDelayTime: 128
+  retryMax: 30
+  scheduledDelay: 128
+  scheduledThreadMax: 10
+  repositorySupport: db
+  tccDbConfig:
+    driverClassName: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/tcc?useUnicode=true&amp;characterEncoding=utf8&useSSL=false
+    username: root
+    password: root
+logging:
+  level:
+    root: info
+    org.apache.http.wire: info
+    org.apache.http.headers: info
+    sun: info
+    org.springframework: info
+    org.apache.ibatis: info
+    com.tcc: debug
+    io.netty: info
+  path: ./logs

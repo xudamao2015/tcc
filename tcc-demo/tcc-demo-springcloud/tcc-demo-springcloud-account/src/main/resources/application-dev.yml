@@ -1,0 +1,55 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/tcc_account?useUnicode=true&characterEncoding=utf-8&useSSL=false
+    username: root
+    password: root
+    poolName: hikariCP
+    type: com.zaxxer.hikari.HikariDataSource
+#    maximumPoolSize: 20
+#    minimumIdle: 3
+#    maxLifetime: 1800000
+#    connectionTimeout: 3000
+#    validationTimeout: 5000
+#    idleTimeout: 60000
+#    connectionTestQuery: SELECT 1
+#    testWhileIdle: true
+#    testOnBorrow: false
+#    testOnReturn: false
+#    poolPreparedStatements: true
+#    maxOpenPreparedStatements: 20
+    
+mybatis:
+  type-aliases-package: com.tcc.demo.springcloud.account.domain.entity
+  mapper-locations: classpath:mapper/*.xml
+tcc:
+  serializer: com.tcc.core.serializer.KryoSerializer
+  recoverDelayTime: 128
+  retryMax: 30
+  scheduledDelay: 128
+  scheduledThreadMax: 10
+  repositorySupport: db
+  tccDbConfig:
+    driverClassName: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/tcc?useUnicode=true&amp;characterEncoding=utf8&useSSL=false
+    username: root
+    password: root
+logging:
+  level:
+    root: info
+    java.sql.Statement: info
+    com.ibatis.common.jdbc.ScriptRunner: info
+    tk.mybatis: info
+    com.tcc: debug
+    
+server:
+  port: 8882
+  servlet:
+    context-path: /account-service
+eureka:
+  client:
+    enabled: true
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+  instance:
+    prefer-ip-address: true
