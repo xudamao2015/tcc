@@ -23,6 +23,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.tcc.core.common.annotation.TccBizAction;
 import com.tcc.core.exception.TccRuntimeException;
@@ -99,6 +100,7 @@ public class PaymentServiceImpl implements PaymentService {
 	}
 
 	@Override
+	@Transactional
 	@TccBizAction(confirmAction = "confirmAction", cancelAction = "cancelAction")
 	public String mockPaymentInventoryWithTryException(Order order) {
 		logger.debug("===========执行springcloud  mockPaymentInventoryWithTryException 扣减资金接口==========");

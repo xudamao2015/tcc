@@ -1,0 +1,13 @@
+server:
+  port: 8762
+eureka:
+  instance:
+    hostname: eureka1
+    prefer-ip-address: true
+  client:
+    service-url:
+      defaultZone: 'http://eureka2:8763;/eureka/'
+    fetch-registry: true
+    register-with-eureka: true
+  server:
+    renewal-percent-threshold: '0.8'

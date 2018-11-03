@@ -1,0 +1,56 @@
+version: "3"
+
+services:
+    eureka1:
+        build: ./tcc-demo-springcloud-eureka
+        image: tcc/demo-eureka-registry-ms
+        ports:
+            - "8763:8763"
+            - "9274:9274"
+        depends_on:
+            - 'jce_java'
+        environment:
+            - TZ=Asia/Shanghai
+        command: "--spring.profiles.active=peer1"
+    eureka2:
+        build: ./tcc-demo-springcloud-eureka
+        image: tcc/demo-eureka-registry-ms
+        ports:
+            - "8762:8762"
+            - "10177:10177"
+        depends_on:
+            - 'jce_java'
+        environment:
+            - TZ=Asia/Shanghai
+        command: "--spring.profiles.active=peer2"
+    inventory:
+        build: ./tcc-demo-springcloud-inventory
+        image: tcc/demo-springcloud-inventory
+        ports:
+            - "8883:8883"
+        depends_on:
+            - 'jce_java'
+        environment:
+            - TZ=Asia/Shanghai
+        command: "--spring.profiles.active=dev"
+    account:
+        build: ./tcc-demo-springcloud-account
+        image: tcc/demo-springcloud-account
+        ports:
+            - "8882:8882"
+        depends_on:
+            - 'jce_java'
+        environment:
+            - TZ=Asia/Shanghai
+        command: "--spring.profiles.active=dev"
+    order:
+        build: ./tcc-demo-springcloud-order
+        image: tcc/demo-springcloud-order
+        ports:
+            - "8884:8884"
+        depends_on:
+            - 'jce_java'
+        environment:
+            - TZ=Asia/Shanghai
+        command: "--spring.profiles.active=dev"
+        

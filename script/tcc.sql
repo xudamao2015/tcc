@@ -1,4 +1,3 @@
-
 TRUNCATE `TCC`.`tcc_inventory_service`;
 TRUNCATE `TCC`.`tcc_order_service`;
 TRUNCATE `TCC`.`tcc_account_service`;
