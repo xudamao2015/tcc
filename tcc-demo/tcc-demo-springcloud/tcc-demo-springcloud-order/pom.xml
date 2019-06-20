@@ -15,8 +15,8 @@
 		<!-- MyBatis Generator -->
 		<!-- Java接口和实体类 -->
 		<targetJavaProject>${basedir}/src/main/java</targetJavaProject>
-		<targetMapperPackage>org.xuyi.demo.mapper</targetMapperPackage>
-		<targetModelPackage>org.xuyi.demo.domain.entity</targetModelPackage>
+		<targetMapperPackage>com.tcc.demo.springcloud.order.domain.mapper</targetMapperPackage>
+		<targetModelPackage>com.tcc.demo.springcloud.order.domain.entity</targetModelPackage>
 		<!-- XML生成路径 -->
 		<targetResourcesProject>${basedir}/src/main/resources</targetResourcesProject>
 		<targetXMLPackage>mapper</targetXMLPackage>
