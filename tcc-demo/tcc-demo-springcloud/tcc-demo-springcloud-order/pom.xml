@@ -15,8 +15,8 @@
 		<!-- MyBatis Generator -->
 		<!-- Java接口和实体类 -->
 		<targetJavaProject>${basedir}/src/main/java</targetJavaProject>
-		<targetMapperPackage>com.bailian.demo.mapper</targetMapperPackage>
-		<targetModelPackage>com.bailian.demo.domain.entity</targetModelPackage>
+		<targetMapperPackage>org.xuyi.demo.mapper</targetMapperPackage>
+		<targetModelPackage>org.xuyi.demo.domain.entity</targetModelPackage>
 		<!-- XML生成路径 -->
 		<targetResourcesProject>${basedir}/src/main/resources</targetResourcesProject>
 		<targetXMLPackage>mapper</targetXMLPackage>
